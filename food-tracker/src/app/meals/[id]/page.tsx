@@ -4,6 +4,8 @@ import { fetchMealById, toMealDTO } from "@/lib/meals";
 import MealDetailView from "@/components/MealDetailView";
 import type { IngredientDTO } from "@/types";
 
+export const dynamic = "force-dynamic";
+
 export default async function MealDetailPage({
   params,
 }: {

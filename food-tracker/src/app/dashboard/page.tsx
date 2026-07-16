@@ -2,6 +2,8 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { fetchAllMeals, toMealDTO } from "@/lib/meals";
 
+export const dynamic = "force-dynamic";
+
 export default async function DashboardPage() {
   const [ingredientCount, meals] = await Promise.all([
     prisma.ingredient.count(),

@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import MealBuilder from "@/components/MealBuilder";
 import type { IngredientDTO } from "@/types";
 
+export const dynamic = "force-dynamic";
+
 export default async function NewMealPage() {
   const ingredients = await prisma.ingredient.findMany({ orderBy: { name: "asc" } });
   const dtos: IngredientDTO[] = ingredients.map((ingredient) => ({

@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import IngredientsManager from "@/components/IngredientsManager";
 import type { IngredientDTO } from "@/types";
 
+export const dynamic = "force-dynamic";
+
 export default async function IngredientsPage() {
   const ingredients = await prisma.ingredient.findMany({ orderBy: { name: "asc" } });
 

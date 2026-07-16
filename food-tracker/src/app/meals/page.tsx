@@ -2,6 +2,8 @@ import Link from "next/link";
 import { fetchAllMeals, toMealDTO } from "@/lib/meals";
 import MealList from "@/components/MealList";
 
+export const dynamic = "force-dynamic";
+
 export default async function MealsPage() {
   const meals = (await fetchAllMeals()).map(toMealDTO);
 
