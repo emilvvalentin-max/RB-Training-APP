@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Ingredient {
+  id              String   @id @default(cuid())
+  name            String
+  caloriesPer100g Float
+  proteinPer100g  Float
+  carbsPer100g    Float
+  fatPer100g      Float
+  fiberPer100g    Float
+  pricePer100g    Float
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  mealIngredients MealIngredient[]
+}
+
+model Meal {
+  id        String   @id @default(cuid())
+  name      String
+  portions  Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  ingredients MealIngredient[]
+}
+
+model MealIngredient {
+  id           String @id @default(cuid())
+  mealId       String
+  ingredientId String
+  grams        Float
+
+  meal       Meal       @relation(fields: [mealId], references: [id], onDelete: Cascade)
+  ingredient Ingredient @relation(fields: [ingredientId], references: [id], onDelete: Restrict)
+
+  @@unique([mealId, ingredientId])
+}
