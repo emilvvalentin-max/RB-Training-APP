@@ -55,6 +55,9 @@ export default function IngredientTable({
                 <span className="font-medium text-zinc-700 dark:text-zinc-300">
                   ${ingredient.pricePer100g.toFixed(2)}/100g
                 </span>
+                {ingredient.barcode && (
+                  <span className="ml-1 text-zinc-400">· barcode {ingredient.barcode}</span>
+                )}
               </p>
             </div>
             <div className="flex gap-2">

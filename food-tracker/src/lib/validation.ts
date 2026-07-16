@@ -19,6 +19,15 @@ export function validateIngredientInput(body: unknown): { data?: IngredientInput
     return { error: "Name is required" };
   }
 
+  let barcode: string | null = null;
+  if (b.barcode !== undefined && b.barcode !== null) {
+    if (typeof b.barcode !== "string") {
+      return { error: "Barcode must be a string" };
+    }
+    const trimmed = b.barcode.trim();
+    barcode = trimmed.length > 0 ? trimmed : null;
+  }
+
   for (const field of NUMERIC_INGREDIENT_FIELDS) {
     const value = b[field];
     if (typeof value !== "number" || Number.isNaN(value) || value < 0) {
@@ -29,6 +38,7 @@ export function validateIngredientInput(body: unknown): { data?: IngredientInput
   return {
     data: {
       name: b.name.trim(),
+      barcode,
       caloriesPer100g: b.caloriesPer100g as number,
       proteinPer100g: b.proteinPer100g as number,
       carbsPer100g: b.carbsPer100g as number,

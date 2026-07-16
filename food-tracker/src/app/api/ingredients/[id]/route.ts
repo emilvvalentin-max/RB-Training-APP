@@ -30,6 +30,16 @@ export async function PATCH(
     return NextResponse.json({ error: "Ingredient not found" }, { status: 404 });
   }
 
+  if (data.barcode) {
+    const dupe = await prisma.ingredient.findUnique({ where: { barcode: data.barcode } });
+    if (dupe && dupe.id !== id) {
+      return NextResponse.json(
+        { error: `Barcode already used by "${dupe.name}"` },
+        { status: 409 }
+      );
+    }
+  }
+
   const ingredient = await prisma.ingredient.update({ where: { id }, data });
   return NextResponse.json(ingredient);
 }

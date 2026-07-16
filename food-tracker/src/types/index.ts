@@ -1,6 +1,7 @@
 export interface IngredientDTO {
   id: string;
   name: string;
+  barcode: string | null;
   caloriesPer100g: number;
   proteinPer100g: number;
   carbsPer100g: number;
@@ -13,6 +14,7 @@ export interface IngredientDTO {
 
 export interface IngredientInput {
   name: string;
+  barcode: string | null;
   caloriesPer100g: number;
   proteinPer100g: number;
   carbsPer100g: number;

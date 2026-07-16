@@ -16,6 +16,16 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error }, { status: 400 });
   }
 
+  if (data.barcode) {
+    const dupe = await prisma.ingredient.findUnique({ where: { barcode: data.barcode } });
+    if (dupe) {
+      return NextResponse.json(
+        { error: `Barcode already used by "${dupe.name}"` },
+        { status: 409 }
+      );
+    }
+  }
+
   const ingredient = await prisma.ingredient.create({ data });
   return NextResponse.json(ingredient, { status: 201 });
 }

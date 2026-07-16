@@ -13,6 +13,7 @@ datasource db {
 model Ingredient {
   id              String   @id @default(cuid())
   name            String
+  barcode         String?  @unique
   caloriesPer100g Float
   proteinPer100g  Float
   carbsPer100g    Float
