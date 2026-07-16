@@ -3,17 +3,17 @@ import type { MealDTO } from "@/types";
 export default function MealDetail({ meal }: { meal: MealDTO }) {
   return (
     <div className="flex flex-col gap-4">
-      <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40">
-        <h3 className="mb-1 text-sm font-semibold text-blue-700 dark:text-blue-300">
+      <div className="rounded-lg border border-strava/30 bg-strava/10 p-4">
+        <h3 className="mb-1 text-sm font-semibold text-strava">
           Cost per portion ({meal.portions} portion{meal.portions === 1 ? "" : "s"} total)
         </h3>
-        <p className="text-3xl font-bold text-blue-700 dark:text-blue-300">
+        <p className="text-3xl font-bold text-strava">
           ${meal.costPerPortion.toFixed(2)}
         </p>
-        <p className="mt-1 text-xs text-blue-600 dark:text-blue-400">
+        <p className="mt-1 text-xs text-strava">
           Total meal cost: ${meal.totalCost.toFixed(2)}
         </p>
-        <p className="mt-2 text-xs text-blue-600 dark:text-blue-400">
+        <p className="mt-2 text-xs text-strava">
           {meal.caloriesPerPortion.toFixed(0)} kcal · {meal.proteinPerPortion.toFixed(1)}g protein ·{" "}
           {meal.carbsPerPortion.toFixed(1)}g carbs · {meal.fatPerPortion.toFixed(1)}g fat ·{" "}
           {meal.fiberPerPortion.toFixed(1)}g fiber (per portion)

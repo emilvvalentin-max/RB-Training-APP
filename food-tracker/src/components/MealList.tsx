@@ -16,7 +16,7 @@ export default function MealList({ meals }: { meals: MealDTO[] }) {
         <Link
           key={meal.id}
           href={`/meals/${meal.id}`}
-          className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white p-3 hover:border-blue-300 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-blue-800"
+          className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white p-3 hover:border-strava/50 dark:border-zinc-800 dark:bg-zinc-900"
         >
           <div>
             <p className="font-medium">{meal.name}</p>
@@ -25,7 +25,7 @@ export default function MealList({ meals }: { meals: MealDTO[] }) {
               ingredient{meal.ingredients.length === 1 ? "" : "s"}
             </p>
           </div>
-          <p className="text-lg font-semibold text-blue-600 dark:text-blue-400">
+          <p className="text-lg font-semibold text-strava">
             ${meal.costPerPortion.toFixed(2)}
             <span className="ml-1 text-xs font-normal text-zinc-500 dark:text-zinc-400">
               /portion

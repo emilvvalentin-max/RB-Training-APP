@@ -11,7 +11,7 @@ export default async function MealsPage() {
         <h1 className="text-xl font-semibold">Meals</h1>
         <Link
           href="/meals/new"
-          className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+          className="rounded-md bg-strava px-3 py-1.5 text-sm font-medium text-white hover:bg-strava-dark"
         >
           + New meal
         </Link>

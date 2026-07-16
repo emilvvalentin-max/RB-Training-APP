@@ -196,7 +196,7 @@ export default function IngredientForm({
             Scan
           </button>
         </div>
-        {lookupNote && <p className="text-sm text-blue-600 dark:text-blue-400">{lookupNote}</p>}
+        {lookupNote && <p className="text-sm text-strava">{lookupNote}</p>}
       </div>
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -232,7 +232,7 @@ export default function IngredientForm({
         <button
           type="submit"
           disabled={saving}
-          className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+          className="rounded-md bg-strava px-4 py-2 text-sm font-medium text-white hover:bg-strava-dark disabled:opacity-50"
         >
           {saving ? "Saving…" : isEdit ? "Save changes" : "Add ingredient"}
         </button>

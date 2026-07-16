@@ -208,14 +208,14 @@ export default function MealBuilder({
         </div>
       </div>
 
-      <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40">
-        <h3 className="mb-2 text-sm font-semibold text-blue-700 dark:text-blue-300">
+      <div className="rounded-lg border border-strava/30 bg-strava/10 p-4">
+        <h3 className="mb-2 text-sm font-semibold text-strava">
           Estimated per portion
         </h3>
-        <p className="text-2xl font-bold text-blue-700 dark:text-blue-300">
+        <p className="text-2xl font-bold text-strava">
           ${preview.costPerPortion.toFixed(2)}
         </p>
-        <p className="mt-1 text-xs text-blue-600 dark:text-blue-400">
+        <p className="mt-1 text-xs text-strava">
           {preview.caloriesPerPortion.toFixed(0)} kcal · {preview.proteinPerPortion.toFixed(1)}g
           protein · {preview.carbsPerPortion.toFixed(1)}g carbs · {preview.fatPerPortion.toFixed(1)}g
           fat · {preview.fiberPerPortion.toFixed(1)}g fiber
@@ -227,7 +227,7 @@ export default function MealBuilder({
       <button
         type="submit"
         disabled={saving}
-        className="self-start rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
+        className="self-start rounded-md bg-strava px-4 py-2 text-sm font-medium text-white hover:bg-strava-dark disabled:opacity-50"
       >
         {saving ? "Saving…" : mode === "create" ? "Save meal" : "Save changes"}
       </button>

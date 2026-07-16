@@ -22,7 +22,7 @@ export default function TabNav() {
             href={tab.href}
             className={`flex-1 py-3 text-center text-sm font-medium transition-colors ${
               active
-                ? "text-blue-600 border-t-2 border-blue-600 dark:text-blue-400 dark:border-blue-400"
+                ? "text-strava border-t-2 border-strava"
                 : "text-zinc-500 border-t-2 border-transparent dark:text-zinc-400"
             }`}
           >

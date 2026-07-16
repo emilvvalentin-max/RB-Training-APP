@@ -47,10 +47,10 @@ export default async function DashboardPage() {
               <Link
                 key={meal.id}
                 href={`/meals/${meal.id}`}
-                className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white p-3 hover:border-blue-300 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-blue-800"
+                className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white p-3 hover:border-strava/50 dark:border-zinc-800 dark:bg-zinc-900"
               >
                 <span>{meal.name}</span>
-                <span className="font-medium text-blue-600 dark:text-blue-400">
+                <span className="font-medium text-strava">
                   ${meal.costPerPortion.toFixed(2)}
                 </span>
               </Link>
