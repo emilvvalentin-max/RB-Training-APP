@@ -4,7 +4,7 @@ A personal tool for tracking ingredient prices and figuring out how much each me
 
 ## Tabs
 
-- **Ingredients** — add foods with calories/protein/carbs/fat/fiber/price per 100g. Edit or delete anytime.
+- **Ingredients** — add foods with calories/protein/carbs/fat/fiber/price per 100g. Edit or delete anytime. Scan a packaged product's barcode (camera, or type it in) to auto-fill nutrition from Open Food Facts — price always still needs to be entered manually since no nutrition database has it. Barcodes must be unique; scanning one already in your list points you to the existing ingredient instead of creating a duplicate.
 - **Meals** — build a meal from your ingredients (grams each) plus a portion count. Cost and nutrition per portion are always computed from the *current* ingredient prices, so editing a price updates every meal that uses it.
 - **Dashboard** — ingredient/meal counts, average cost per portion, and meals sorted by cost per portion.
 
